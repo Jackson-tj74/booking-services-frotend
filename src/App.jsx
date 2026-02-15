@@ -13,6 +13,7 @@ import BookingForm from "./Pages/BookingForm";
 import MyBook from "./Pages/MyBook";
 import AdminDashboard from "./Pages/AdminDashboard";
 import ContactCard from "./Components/ContactCard";
+import ProviderDashboard from "./Components/providerDashboard";
 
 
 
@@ -37,7 +38,7 @@ function App() {
             
           </Route>
           <Route path="register" element={<Register />} />
-
+          <Route path="provider" element={<ProviderDashboard />} />
           <Route path="login" element={<Login />} />
         </Routes>
       </BrowserRouter>
