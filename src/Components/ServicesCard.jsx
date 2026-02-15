@@ -29,7 +29,7 @@ function ServicesCard() {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Auto-slide every 5 seconds
+  
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % servicesData.length);

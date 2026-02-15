@@ -1,16 +1,7 @@
 
-
-
-
-
-
- 
-  import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {
-  LogOut,
-  CalendarCheck,
-} from "lucide-react";
+import { LogOut, CalendarCheck } from "lucide-react";
 
 import pic1 from "../assets/pic1.jpg";
 import pic2 from "../assets/pic2.jpg";
@@ -27,12 +18,14 @@ function ServicesDashboard() {
   const token = localStorage.getItem("token");
   const user = JSON.parse(localStorage.getItem("user"));
 
-  //  Protect dashboard
+  const [searchTerm, setSearchTerm] = useState("");
+
+  // Protect dashboard
   useEffect(() => {
     if (!token || !user) {
       navigate("/login");
     }
-  }, []);
+  }, [token, user, navigate]);
 
   const servicesData = [
     { id: 1, name: "Web Development", image: pic1, price: 500 },
@@ -46,6 +39,11 @@ function ServicesDashboard() {
     { id: 9, name: "IT Consulting", image: pic9, price: 450 },
   ];
 
+  // 🔍 Filter services
+  const filteredServices = servicesData.filter((service) =>
+    service.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   const handleBooking = (service) => {
     localStorage.setItem("selectedService", JSON.stringify(service));
     navigate("/booking-form");
@@ -56,14 +54,12 @@ function ServicesDashboard() {
     navigate("/login");
   };
 
-
   return (
     <div className="min-h-screen bg-gray-50">
 
       {/* 🔵 TOP HEADER */}
       <div className="bg-indigo-600 text-white px-6 py-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-
           <div>
             <h1 className="text-2xl font-bold">
               Welcome, {user?.name} 👋
@@ -90,18 +86,34 @@ function ServicesDashboard() {
               Logout
             </button>
           </div>
-
         </div>
       </div>
 
       {/* 🧩 SERVICES SECTION */}
       <div className="max-w-7xl mx-auto px-6 py-12">
-        <h2 className="text-3xl font-bold text-center text-indigo-600 mb-10">
+        <h2 className="text-3xl font-bold text-center text-indigo-600 mb-6">
           Available Services
         </h2>
 
+        {/* 🔍 SEARCH INPUT */}
+        <div className="mb-10 flex justify-center">
+          <input
+            type="text"
+            placeholder="Search service..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="w-full max-w-md px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          />
+        </div>
+
+        {filteredServices.length === 0 && (
+          <p className="text-center text-gray-500">
+            No services found 😕
+          </p>
+        )}
+
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {servicesData.map((service) => (
+          {filteredServices.map((service) => (
             <div
               key={service.id}
               className="bg-white rounded-xl shadow hover:shadow-xl transition overflow-hidden"
