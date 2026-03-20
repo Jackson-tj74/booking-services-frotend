@@ -5,7 +5,7 @@ import axios from "axios";
 export default function AdminChecking() {
   const [bookings, setBookings] = useState([]);
 
-  // Fetch bookings from backend
+
   useEffect(() => {
     const fetchBookings = async () => {
       const token = localStorage.getItem("token");
@@ -73,7 +73,6 @@ export default function AdminChecking() {
                 <td className="p-2">{b.serviceName}</td>
                 <td className="p-2">{b.customerName}</td>
 
-                {/* EMAIL */}
                 <td className="p-1 text-blue-700 ">
                   {b.customerEmail}
                 </td>

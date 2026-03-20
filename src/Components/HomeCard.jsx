@@ -28,12 +28,10 @@ function HomeCard() {
       
       
 
-      {/* Services Section */}
       <section id="services" className="relative z-10">
         <ServicesCard />
       </section>
 
-      {/* About / Features Section */}
       <section className="w-full bg-gray-100 py-20 px-8">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
           <div className="bg-white rounded-xl p-8 shadow hover:shadow-xl transition">
@@ -51,7 +49,7 @@ function HomeCard() {
         </div>
       </section>
 
-      {/* CTA Section */}
+
       <section className="w-full bg-blue-800 py-20 text-center text-white">
         <h2 className="text-4xl font-bold mb-4">Ready to Get Started?</h2>
         <p className="mb-8 max-w-2xl mx-auto">

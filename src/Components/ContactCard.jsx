@@ -13,7 +13,7 @@ export default function ContactCard() {
     setSuccess("");
 
     try {
-      // Example endpoint, adjust your backend
+
       await axios.post("http://localhost:5000/contact", form);
 
       setSuccess("Message sent successfully ✅");
@@ -35,7 +35,7 @@ export default function ContactCard() {
       </p>
 
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
-        {/* Contact Info */}
+    
         <div className="space-y-6">
           <div className="flex items-center gap-3">
             <MapPin className="text-indigo-600" />
@@ -51,7 +51,6 @@ export default function ContactCard() {
           </div>
         </div>
 
-        {/* Contact Form */}
         <form
           onSubmit={submit}
           className="bg-white p-6 rounded-xl shadow-md space-y-4"

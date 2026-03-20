@@ -248,7 +248,6 @@ export default function LoginCard() {
           </div>
         </div>
 
-        {/* END MAIN */}
       </div>
     </div>
   );

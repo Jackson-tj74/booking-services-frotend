@@ -16,7 +16,7 @@ export default function BookingForm() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(null);
 
-  // Services default hamwe na prices
+
   const services = [
     { name: "Web Development", price: 500 },
     { name: "Mobile Apps", price: 800 },
@@ -70,7 +70,7 @@ export default function BookingForm() {
           Book a Service
         </h2>
 
-        {/* Dropdown yo guhitamo service */}
+  
         <select
           value={form.serviceName}
           onChange={handleServiceChange}
@@ -85,7 +85,7 @@ export default function BookingForm() {
           ))}
         </select>
 
-        {/* Price irahita yandikwa bitewe na service */}
+   
         <input
           type="number"
           placeholder="Price"
@@ -142,7 +142,6 @@ export default function BookingForm() {
           </div>
         )}
 
-        {/* BUTTON OF VIEW MY BOOKINGS AS USER */}
         <button
           type="button"
           onClick={() => navigate("/mybookings")}

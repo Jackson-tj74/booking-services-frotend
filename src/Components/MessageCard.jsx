@@ -4,7 +4,7 @@ import axios from "axios";
 export default function MessageCard() {
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(true);
-  const token = localStorage.getItem("token"); // token of admin
+  const token = localStorage.getItem("token"); 
 
   useEffect(() => {
     const fetchMessages = async () => {

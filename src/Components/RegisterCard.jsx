@@ -50,13 +50,13 @@ export default function RegisterCard() {
         backgroundRepeat: "no-repeat",
       }}
     >
-      {/* Overlay to make content readable */}
+  
       <div className="absolute inset-0 bg-black/40"></div>
 
       <div className="relative min-h-screen flex items-center justify-center p-6">
         
          
-          {/* RIGHT PANEL – REGISTER FORM */}
+    
           <div className="w-full md:w-1/2 flex justify-center items-center">
             <div className="bg-white p-6 w-full max-w-md rounded-lg shadow-md">
 
@@ -71,7 +71,6 @@ export default function RegisterCard() {
                   Fill in the details below
                 </p>
 
-                {/* NAME */}
                 <input
                   type="text"
                   placeholder="Full Name"
@@ -83,7 +82,6 @@ export default function RegisterCard() {
                   required
                 />
 
-                {/* EMAIL */}
                 <input
                   type="email"
                   placeholder="Email"
@@ -95,7 +93,7 @@ export default function RegisterCard() {
                   required
                 />
 
-                {/* PASSWORD */}
+    
                 <div className="relative mb-4">
                   <input
                     type={showPassword ? "text" : "password"}
@@ -120,7 +118,7 @@ export default function RegisterCard() {
                   </button>
                 </div>
 
-                {/* ROLE */}
+
                 <div className="mb-4">
                   <p className="font-semibold mb-2">
                     Sign up as:
@@ -151,7 +149,7 @@ export default function RegisterCard() {
                   </label>
                 </div>
 
-                {/* SUBMIT */}
+        
                 <button
                   disabled={loading}
                   className="w-full bg-blue-800 text-white py-2 rounded hover:bg-blue-900 transition"

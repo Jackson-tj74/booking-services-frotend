@@ -17,7 +17,7 @@ function NavBar() {
     <nav className="sticky top-0 z-50 bg-indigo-600/95 backdrop-blur shadow">
       <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
 
-        {/* LOGO */}
+      
         <Link to="/" className="flex items-center space-x-3">
           <img
             src={logo}
@@ -29,7 +29,6 @@ function NavBar() {
           </span>
         </Link>
 
-        {/* DESKTOP MENU */}
         <div className="hidden md:flex items-center space-x-8 font-medium">
           <Link to="/" className={isActive("/")}>
             Home
@@ -49,7 +48,7 @@ function NavBar() {
           </Link>
         </div>
 
-        {/* MOBILE TOGGLE */}
+  
         <button
           className="md:hidden text-white"
           onClick={() => setIsOpen(!isOpen)}
@@ -59,7 +58,7 @@ function NavBar() {
         </button>
       </div>
 
-      {/* MOBILE MENU */}
+
       {isOpen && (
         <div className="md:hidden bg-white/95 backdrop-blur px-6 py-6 space-y-4 shadow-lg">
           <Link

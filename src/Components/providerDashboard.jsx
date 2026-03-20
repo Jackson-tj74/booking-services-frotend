@@ -22,14 +22,13 @@ function ProviderDashboard() {
     category: "",
   });
 
-  // add category
   const addCategory = () => {
     if (!categoryName) return;
     setCategories([...categories, { id: Date.now(), name: categoryName }]);
     setCategoryName("");
   };
 
-  // add service
+
   const addService = () => {
     if (!serviceData.name || !serviceData.price) return;
     setServices([...services, { id: Date.now(), ...serviceData }]);
@@ -42,7 +41,7 @@ function ProviderDashboard() {
         Provider Dashboard
       </h1>
 
-      {/* 🔹 TABS */}
+  
       <div className="flex gap-4 mb-8">
         {["categories", "services", "bookings", "profile"].map((tab) => (
           <button
@@ -59,7 +58,6 @@ function ProviderDashboard() {
         ))}
       </div>
 
-      {/* 📂 CATEGORIES */}
       {activeTab === "categories" && (
         <div className="bg-white p-6 rounded shadow">
           <h2 className="text-xl font-bold mb-4">Categories</h2>
@@ -87,7 +85,6 @@ function ProviderDashboard() {
         </div>
       )}
 
-      {/* 🛠 SERVICES */}
       {activeTab === "services" && (
         <div className="bg-white p-6 rounded shadow">
           <h2 className="text-xl font-bold mb-4">Services</h2>
@@ -141,7 +138,6 @@ function ProviderDashboard() {
         </div>
       )}
 
-      {/* 📅 BOOKINGS */}
       {activeTab === "bookings" && (
         <div className="bg-white p-6 rounded shadow">
           <h2 className="text-xl font-bold mb-4">Bookings</h2>
@@ -156,7 +152,7 @@ function ProviderDashboard() {
         </div>
       )}
 
-      {/* 👤 PROFILE */}
+  
       {activeTab === "profile" && (
         <div className="bg-white p-6 rounded shadow max-w-md">
           <h2 className="text-xl font-bold mb-4">My Profile</h2>

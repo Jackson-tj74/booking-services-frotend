@@ -20,7 +20,6 @@ function ServicesDashboard() {
 
   const [searchTerm, setSearchTerm] = useState("");
 
-  // Protect dashboard
   useEffect(() => {
     if (!token || !user) {
       navigate("/login");
@@ -39,7 +38,6 @@ function ServicesDashboard() {
     { id: 9, name: "IT Consulting", image: pic9, price: 450 },
   ];
 
-  // 🔍 Filter services
   const filteredServices = servicesData.filter((service) =>
     service.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -57,7 +55,6 @@ function ServicesDashboard() {
   return (
     <div className="min-h-screen bg-gray-50">
 
-      {/* 🔵 TOP HEADER */}
       <div className="bg-indigo-600 text-white px-6 py-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div>
@@ -89,13 +86,11 @@ function ServicesDashboard() {
         </div>
       </div>
 
-      {/* 🧩 SERVICES SECTION */}
       <div className="max-w-7xl mx-auto px-6 py-12">
         <h2 className="text-3xl font-bold text-center text-indigo-600 mb-6">
           Available Services
         </h2>
 
-        {/* 🔍 SEARCH INPUT */}
         <div className="mb-10 flex justify-center">
           <input
             type="text"

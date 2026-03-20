@@ -11,7 +11,6 @@ export default function UserBookings() {
   const token = localStorage.getItem("token");
   const navigate = useNavigate();
 
-  // 🔹 Fetch user bookings
   useEffect(() => {
     if (!token) {
       navigate("/login");
@@ -36,7 +35,6 @@ export default function UserBookings() {
     fetchBookings();
   }, [token, navigate]);
 
-  // 🔹 LOADING
   if (loading) {
     return (
       <p className="text-center mt-16 text-gray-600 text-lg">
@@ -45,14 +43,12 @@ export default function UserBookings() {
     );
   }
 
-  // 🔹 ERROR
   if (error) {
     return (
       <p className="text-center mt-16 text-red-500 text-lg">{error}</p>
     );
   }
 
-  // 🔹 NO BOOKINGS
   if (bookings.length === 0) {
     return (
       <div className="text-center mt-16">
@@ -70,7 +66,6 @@ export default function UserBookings() {
     );
   }
 
-  // DELETE = HIDE ONLY (UI only)
   const handleDelete = (id) => {
     if (!window.confirm("Remove this booking from your dashboard?")) return;
     setBookings((prev) => prev.filter((b) => b._id !== id));
@@ -97,7 +92,6 @@ export default function UserBookings() {
               </p>
             </div>
 
-            {/* DELETE BUTTON */}
             <button
               onClick={() => handleDelete(b._id)}
               className="flex items-center justify-center gap-2 bg-red-400 text-white py-2 rounded-lg hover:bg-red-700 transition"
@@ -108,7 +102,7 @@ export default function UserBookings() {
         ))}
       </div>
 
-      {/* BACK TO DASHBOARD */}
+
       <div className="mt-10 text-center">
         <button
           onClick={() => navigate("/dashboard")}

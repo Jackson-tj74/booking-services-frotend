@@ -5,7 +5,7 @@ function Footer() {
     <footer className="bg-slate-900 text-slate-300 mt-20">
       <div className="max-w-7xl mx-auto px-6 py-16 grid gap-10 md:grid-cols-3">
 
-        {/* BRAND */}
+
         <div>
           <h2 className="text-2xl font-bold text-white mb-3">
             Booking Platform
@@ -16,7 +16,6 @@ function Footer() {
           </p>
         </div>
 
-        {/* QUICK LINKS */}
         <div>
           <h3 className="text-lg font-semibold text-white mb-4">
             Quick Links
@@ -45,7 +44,6 @@ function Footer() {
           </ul>
         </div>
 
-        {/* CONTACT */}
         <div>
           <h3 className="text-lg font-semibold text-white mb-4">
             Contact Us
@@ -70,7 +68,6 @@ function Footer() {
         </div>
       </div>
 
-      {/* COPYRIGHT */}
       <div className="border-t border-slate-700 text-center py-4 text-sm text-slate-400">
         © {new Date().getFullYear()} Booking Platform. All rights reserved.
       </div>

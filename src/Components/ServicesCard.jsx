@@ -68,9 +68,8 @@ function ServicesCard() {
         backgroundPosition: "center",
       }}
     >
-      <div className="absolute inset-0 bg-black/20"></div> {/* overlay */}
+      <div className="absolute inset-0 bg-black/20"></div> 
 
-      {/* Slides */}
       {servicesData.map((service, index) => (
         <div
           key={service.id}
@@ -98,7 +97,6 @@ function ServicesCard() {
         </div>
       ))}
 
-      {/* Navigation Arrows */}
       <button
         className="absolute left-5 top-1/2 -translate-y-1/2 text-white text-4xl font-bold z-20"
         onClick={prevSlide}
@@ -112,7 +110,6 @@ function ServicesCard() {
         ›
       </button>
 
-      {/* Dot Indicators */}
       <div className="absolute bottom-10 w-full flex justify-center space-x-3">
         {servicesData.map((_, idx) => (
           <span
