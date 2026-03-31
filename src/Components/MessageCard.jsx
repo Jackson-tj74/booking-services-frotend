@@ -9,7 +9,7 @@ export default function MessageCard() {
   useEffect(() => {
     const fetchMessages = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/message", {
+        const res = await axios.get(`${import.meta.env.VITE_SERVER_URL}/message`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

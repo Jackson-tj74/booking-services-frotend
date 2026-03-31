@@ -46,7 +46,7 @@ export default function BookingForm() {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.post(
-        "http://localhost:5000/bookings",
+        `${import.meta.env.VITE_SERVER_URL}/bookings`,
         form,
         { headers: { Authorization: `Bearer ${token}` } }
       );

@@ -10,7 +10,7 @@ export default function AdminChecking() {
     const fetchBookings = async () => {
       const token = localStorage.getItem("token");
       try {
-        const res = await axios.get("http://localhost:5000/admin/bookings", {
+        const res = await axios.get(`${import.meta.env.VITE_SERVER_URL}/admin/bookings`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setBookings(res.data);
@@ -32,7 +32,7 @@ export default function AdminChecking() {
 
     const token = localStorage.getItem("token");
     try {
-      await axios.delete(`http://localhost:5000/admin/bookings/${id}`, {
+      await axios.delete(`${import.meta.env.VITE_SERVER_URL}/admin/bookings/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 

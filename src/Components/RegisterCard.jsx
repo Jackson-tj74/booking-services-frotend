@@ -26,8 +26,8 @@ export default function RegisterCard() {
     try {
       const endpoint =
         form.role === "admin"
-          ? "http://localhost:5000/admin/register"
-          : "http://localhost:5000/user/register";
+          ? `${import.meta.env.VITE_SERVER_URL}/admin/register`
+          : `${import.meta.env.VITE_SERVER_URL}/user/register`;
 
       await axios.post(endpoint, form);
 

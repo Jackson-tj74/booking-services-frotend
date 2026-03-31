@@ -14,7 +14,7 @@ export default function ContactCard() {
 
     try {
 
-      await axios.post("http://localhost:5000/contact", form);
+      await axios.post(`${import.meta.env.VITE_SERVER_URL}/contact`, form);
 
       setSuccess("Message sent successfully ✅");
       setForm({ name: "", email: "", message: "" });

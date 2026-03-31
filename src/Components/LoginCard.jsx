@@ -26,8 +26,8 @@ export default function LoginCard() {
     try {
       const url =
         form.loginAs === "admin"
-          ? "http://localhost:5000/admin/login"
-          : "http://localhost:5000/user/login";
+          ? `${import.meta.env.VITE_SERVER_URL}/admin/login`
+          : `${import.meta.env.VITE_SERVER_URL}/user/login`;
 
       const res = await axios.post(url, {
         email: form.email,
